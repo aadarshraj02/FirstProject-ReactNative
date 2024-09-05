@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {
   View,
   Text,
@@ -10,10 +9,14 @@ import {
 
 function AppPro(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+  const backgroundStyle = {
+    backgroundColor: isDarkMode ? '#000' : '#fff',
+  };
+
   return (
-    <SafeAreaView>
-      <View style={styles.container}>
-        <Text style={isDarkMode ? styles.whiteText : styles.whiteText}>
+    <SafeAreaView style={[styles.safeArea, backgroundStyle]}>
+      <View style={[styles.container]}>
+        <Text style={isDarkMode ? styles.whiteText : styles.darkText}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non.
         </Text>
       </View>
@@ -22,8 +25,12 @@ function AppPro(): JSX.Element {
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   container: {
     flex: 1,
+    justifyContent: 'center',
     alignItems: 'center',
   },
   whiteText: {
