@@ -1,11 +1,13 @@
 import React from 'react';
 
-import { View } from 'react-native';
+import { View,Text } from 'react-native';
 
 
 function AppPro(){
     return(
-        <View></View>
+        <View>
+            <Text>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non.</Text>
+        </View>
     )
 }
 
